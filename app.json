@@ -1,0 +1,44 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/RecommendedDaily/RecommendedDaily",
+        "pages/SongDetail/SongDetail",
+
+
+        "pages/video/video",
+        "pages/personal/personal",
+        "pages/login/login"
+
+    ],
+    "requiredBackgroundModes": ["audio"],
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "window": {
+        "navigationBarBackgroundColor": "#d43c33",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "在线云音乐"
+    },
+    "tabBar": {
+        "selectedColor": "#d43c33",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "/static/images/tabs/home.png",
+                "selectedIconPath": "/static/images/tabs/select-home.png"
+            },
+            {
+                "pagePath": "pages/video/video",
+                "text": "视频",
+                "iconPath": "/static/images/tabs/video.png",
+                "selectedIconPath": "/static/images/tabs/select-video.png"
+            },
+            {
+                "pagePath": "pages/personal/personal",
+                "text": "我的",
+                "iconPath": "/static/images/tabs/person.png",
+                "selectedIconPath": "/static/images/tabs/select-person.png"
+            }
+        ]
+    }
+}

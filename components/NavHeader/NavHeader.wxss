@@ -1,0 +1,14 @@
+/* components/NavHeader/NavHeader.wxss */
+.recommendContainer{padding:0 20rpx;}
+.recommendContainer .header .title{
+    font-size: 26rpx;
+    line-height: 80rpx;
+    color: #666;
+}
+.recommendContainer .header .more{
+    float: right;
+    border: 1px solid #333;
+    padding: 10rpx 20rpx;
+    font-size: 24rpx;
+    border-radius: 30rpx;
+}
