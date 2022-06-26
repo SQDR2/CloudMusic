@@ -1,18 +1,29 @@
 <view class="songContainer">
 <!-- 歌曲磁盘区 -->
-    <view class="author">{{song.al.name}}</view>
+    <view class="author">{{song.ar[0].name}}</view>
     <view class="circle"></view>
     <image class="needle {{isplay&&'isplay'}}" src="/static/images/song/needle.png"></image>
     <view class="discContainer ">
         <image class="disc" src="/static/images/song/disc.png"></image>
         <image class="authorLogo {{isplay&&'discAnimation'}}" src="{{song.al.picUrl}}"></image>
     </view>
+    <!-- 进度条 -->
+    <view class="programControl">
+        <text>{{currentTime}}</text>
+        <view class="barControl">
+            <view class="bar-current-time"  style="width: {{currentWidth+'rpx'}};">
+                <view class="bar-circle"></view>
+            </view>
+        </view>
+        <text>{{totalTime}}</text>
+    </view>
+
     <!-- 播放歌曲区 -->
     <view class="musicControl">
         <text class="iconfont icon-24gl-repeat2"></text>
-        <text class="iconfont icon-shangyishoushangyige"></text>
+        <text class="iconfont icon-shangyishoushangyige" id="pre" bindtap="switchMusic"></text>
         <text class="iconfont {{isplay?'icon-zhengzaibofang':'icon-zantingbofang'}} big" bindtap="MusicPLay"></text>
-        <text class="iconfont icon-xiayigexiayishou"></text>
+        <text class="iconfont icon-xiayigexiayishou" id="next" bindtap="switchMusic"></text>
         <text class="iconfont icon-liebiao"></text>
     </view>
 </view>

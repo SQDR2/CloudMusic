@@ -7,7 +7,8 @@ Page({
     data: {
         day:'',
         month:'',
-        recommendlist:[]
+        recommendlist:[],
+        index:0
     },
 
     /**
@@ -42,9 +43,15 @@ Page({
         })
     },
     toMusicDetail(event){
-        let musicid = event.currentTarget.dataset.music.id
+        let {musicid,index} = event.currentTarget.dataset
+        this.setData({
+            index
+        })
         wx.navigateTo({
-          url: '/pages/SongDetail/SongDetail?songid='+JSON.stringify(musicid)
+          url: '/pages/SongDetail/SongDetail?songid='+JSON.stringify(musicid)+'&index='+this.data.index,
+          success:(res)=>{
+            res.eventChannel.emit('musicList',{musicList: this.data.recommendlist})
+          }
         })
     },
     /**
