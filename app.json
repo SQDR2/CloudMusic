@@ -2,8 +2,6 @@
     "pages": [
         "pages/index/index",
         "pages/search/search",
-        "pages/RecommendedDaily/RecommendedDaily",
-        "pages/SongDetail/SongDetail",
         "pages/video/video",
         "pages/personal/personal",
         "pages/login/login"
@@ -40,5 +38,15 @@
                 "selectedIconPath": "/static/images/tabs/select-person.png"
             }
         ]
-    }
+    },
+    "subPackages": [
+        {
+            "root": "SongPackage",
+            "pages": [
+                "pages/RecommendedDaily/RecommendedDaily",
+                "pages/SongDetail/SongDetail"
+            ]
+        }
+    ],
+    "lazyCodeLoading": "requiredComponents"
 }

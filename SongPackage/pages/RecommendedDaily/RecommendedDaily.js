@@ -1,4 +1,4 @@
-import request from '../../utils/request'
+import request from '../../../utils/request'
 Page({
 
     /**
@@ -36,10 +36,11 @@ Page({
     },
     //获取每日推荐歌曲
     async getRecommendlist(){
-        let recommendlistData  = await request('/recommend/songs')
+        let cookie = wx.getStorageSync('cookie')
+        let recommendlistData  = await request('/recommend/songs',{cookie})
         // console.log(recommendlistData);
         this.setData({
-            recommendlist:recommendlistData.recommend
+            recommendlist:recommendlistData.data.dailySongs
         })
     },
     toMusicDetail(event){
@@ -48,7 +49,7 @@ Page({
             index
         })
         wx.navigateTo({
-          url: '/pages/SongDetail/SongDetail?songid='+JSON.stringify(musicid)+'&index='+this.data.index,
+          url: '/SongPackage/pages/SongDetail/SongDetail?songid='+JSON.stringify(musicid)+'&index='+this.data.index,
           success:(res)=>{
             res.eventChannel.emit('musicList',{musicList: this.data.recommendlist})
           }

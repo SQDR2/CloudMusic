@@ -57,14 +57,15 @@ Page({
     },
     // 获取导航栏下划线处视频列表
     async getVideoList(navid){
-        let videoListData = await request('/video/group',{id:navid})
+        let videoListData = await request('/video/group',{id:navid,cookie:wx.getStorageSync('cookie')})
         wx.hideLoading()
         let index = 0
-        let videoList = videoListData.datas.map(item=>{
-            item.id=index++
-            return item
-        }
-        )
+        console.log(videoListData)
+        // let videoList = videoListData.datas.map(item=>{
+        //     item.id=index++
+        //     return item
+        // }
+        // )
         this.setData({
             videoList,
             isrefresh:false,

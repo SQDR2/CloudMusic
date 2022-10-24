@@ -5,7 +5,7 @@
         <view class="welcome">欢迎回来！</view>
         <view class="input-content">
             <view class="input-item">
-                <input type="text" placeholder="手机号码" id="phone" bindinput="handlerinput" />
+                <input type="text" placeholder="邮箱" id="email" bindinput="handlerinput"/>
             </view>
             <view class="input-item">
                 <input type="password" placeholder="密码" id="password" bindinput="handlerinput" />

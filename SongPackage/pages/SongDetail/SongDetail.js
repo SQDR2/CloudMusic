@@ -1,5 +1,6 @@
-import request from '../../utils/request'
-let dayjs = require('dayjs')
+import request from '../../../utils/request'
+import dayjs from '../../dayjs/index'
+// let dayjs = request('dayjs')
 const appInstance = getApp();
 Page({
 
@@ -115,7 +116,9 @@ Page({
     async musicControl(isplay,id,musiclink){
         if(isplay){
             if(!musiclink){
-                let musicData = await request('/song/url',{id:id})
+                // console.log(id)
+                let musicData = await request('/song/url',{id:id,cookie:wx.getStorageSync('cookie')})
+                // console.log(musicData)
                 musiclink = musicData.data[0].url
                 this.setData({
                     musiclink

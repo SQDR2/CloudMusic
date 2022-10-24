@@ -51,6 +51,7 @@
                 <text class="iconfont icon-gexingzhuangban"></text>
                 <text>个性装扮</text>
             </view>
+            
         </view>
         <!-- 个人中心 -->
         <view class="personalContent">
@@ -66,7 +67,7 @@
             </view>
 
             <view class="cardList">
-                <view class="card-item">
+                <!-- <view class="card-item">
                     <text class="title">我的音乐</text>
                     <text class="more"> > </text>
                 </view>
@@ -76,6 +77,10 @@
                 </view>
                 <view class="card-item">
                     <text class="title">我的电台</text>
+                    <text class="more"> > </text>
+                </view> -->
+                <view class="card-item" bindtap="logout">
+                    <text class="title">退出账号</text>
                     <text class="more"> > </text>
                 </view>
             </view>

@@ -1,5 +1,4 @@
 import request from '../../utils/request'
-// pages/personal/personal.js
 let startY,moveY,endY,moveDistance;
 Page({
 
@@ -62,9 +61,30 @@ Page({
         })
     },
     toLogin(){
-        wx.navigateTo({
-          url: '/pages/login/login',
-        })
+        if(!wx.getStorageSync('userInfo')){
+            wx.navigateTo({
+                url: '/pages/login/login',
+              })
+        }else{
+            wx.showToast({
+                title: '您已经登录了！登录其他账号请退出当前账号！',
+                icon:'error'
+              })
+        }
+    },
+    async logout(){
+        if(wx.getStorageSync('userInfo')){
+            wx.removeStorageSync('cookie')
+            wx.removeStorageSync('userInfo')
+            wx.reLaunch({
+                url: '/pages/personal/personal',
+            })
+        }else{
+            wx.showToast({
+              title: '无用户登录',
+              icon:'error'
+            })
+        }
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

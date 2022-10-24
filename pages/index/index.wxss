@@ -98,11 +98,18 @@
     text-align: center;
     line-height: 100rpx;
 }
-.musicItem .musicName{
+.musicItem .musicName,.musicAr{
     height: 100rpx;
     line-height: 100rpx;
     max-width: 400rpx;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.musicItem text{
+    font-size: 28rpx;
+}
+.musicItem text:last-child{
+    font-size: 24rpx;
+    color: #8C8C8C;
 }

@@ -1,4 +1,4 @@
-// pages/login/login.js
+
 import request from '../../utils/request'
 Page({
 
@@ -6,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        phone:'',
+        email:'',
         password:''
     },
 
@@ -24,19 +24,20 @@ Page({
         })
     },
     async login(){
-        let {phone,password} = this.data
+        let {email,password} = this.data
         //前端验证
-        if(!phone){
+        if(!email){
             wx.showToast({
-              title: '手机号不能为空',
+              title: '邮箱不能为空',
               icon:'error'
             })
             return;
         }
-        let phoneReg = /^1(3|4|5|6|7|8|9)\d{9}$/ 
-        if(!phoneReg.test(phone)){
+        // let phoneReg = /^1(3|4|5|6|7|8|9)\d{9}$/ 
+        let mailReg = /^[a-zA-Z0-9][a-zA-Z0-9_]+\@[a-zA-Z0-9]+\.[a-zA-Z]{2,5}(\.[a-zA-Z]{2,5})*$/i;
+        if(!mailReg.test(email)){
             wx.showToast({
-              title: '手机号格式错误',
+              title: '邮箱格式错误',
               icon:'error'
             })
             return;
@@ -49,19 +50,21 @@ Page({
             return;
         }
         //后端验证
-        let result = await request('/login/cellphone',{phone,password,isLogin:true})
+        // let result = await request('/login/cellphone',{phone,password,isLogin:true})
+        let result = await request('/login',{email,password})
         // console.log(result);
         if(result.code==200){
             wx.showToast({
               title: '登录成功',
               icon:'success'
             })
-            // console.log(result);
+
             // 这里用wx.relaunch,不用navigateto
             wx.reLaunch({
               url: '/pages/personal/personal'
             })
             wx.setStorageSync('userInfo', result.profile)
+            wx.setStorageSync('cookie', result.cookie)
         }else if(result.code==502){
             wx.showToast({
               title: '密码错误',

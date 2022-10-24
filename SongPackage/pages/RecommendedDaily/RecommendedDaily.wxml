@@ -16,10 +16,10 @@
         <!-- 歌曲区域 -->
         <scroll-view class="listScroll" scroll-y>
             <view class="scrollItem" wx:for="{{recommendlist}}" wx:key="id" data-index="{{index}}" data-musicid="{{item.id}}" bindtap="toMusicDetail">
-                <image src="{{item.album.picUrl}}"></image>
+                <image src="{{item.al.picUrl}}"></image>
                 <view class="music">
                     <text class="musicname">{{item.name}}</text>
-                    <text class="author">{{item.artists[0].name}}</text>
+                    <text class="author">{{item.ar[0].name}}</text>
                 </view>
                 <view class="iconfont icon-sangedian"></view>
             </view>
