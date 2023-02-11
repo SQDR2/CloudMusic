@@ -1,4 +1,21 @@
 <!--pages/index/index.wxml-->
+<view class="popup-box" wx:if="{{showIndex=='1'}}" bindtap="closePopup"></view> 
+<view class="info-top" wx:if="{{showIndex=='1'}}">
+    <view class="row-info">
+    <text>
+        学习小程序时编写的项目\n目前只有首页的每日推荐和视频页面才能展示\n可以在每日推荐听歌
+        这两个都是需要登录网易云音乐账号\n目前手机和邮箱登录因为接口问题都不能跳过验证\n所以只能扫描二维码登录
+        这个项目还有许多没有完善的地方,感谢谅解
+    </text>
+  </view>
+  <view class="row-btn">
+    <view class="left-btn" bindtap="closePopup">关闭</view>
+  </view>
+</view>
+
+<!-- 上面是弹窗功能 以后完善的话可以删除 -->
+
+
 <view class="container">
     <!-- 顶部轮播图区 -->
     <swiper class="banners" indicator-dots 	indicator-color="ivory" indicator-active-color="#d43c33" autoplay>

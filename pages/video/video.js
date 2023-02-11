@@ -20,7 +20,8 @@ Page({
      */
     onLoad(options) {
         let userInfo = wx.getStorageSync('userInfo')
-        if(!userInfo){
+        // if(!userInfo){
+        if(!wx.getStorageSync('cookie')){
             wx.showToast({
               title: '请先登录',
               icon:'error',
@@ -60,12 +61,12 @@ Page({
         let videoListData = await request('/video/group',{id:navid,cookie:wx.getStorageSync('cookie')})
         wx.hideLoading()
         let index = 0
-        console.log(videoListData)
-        // let videoList = videoListData.datas.map(item=>{
-        //     item.id=index++
-        //     return item
-        // }
-        // )
+        // console.log(videoListData)
+        let videoList = videoListData.datas.map(item=>{
+            item.id=index++
+            return item
+        }
+        )
         this.setData({
             videoList,
             isrefresh:false,

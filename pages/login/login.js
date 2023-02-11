@@ -23,6 +23,11 @@ Page({
             [type]:event.detail.value
         })
     },
+    Scanning(){
+        wx.navigateTo({
+            url: '/pages/QRcodeLogin/QRcodeLogin',
+          })
+    },
     async login(){
         let {email,password} = this.data
         //前端验证

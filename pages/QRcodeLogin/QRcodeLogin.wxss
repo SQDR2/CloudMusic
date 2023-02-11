@@ -1,0 +1,18 @@
+.QRcode_box{
+    width: 430rpx;
+    height: 430rpx;
+    margin: 120rpx auto 0;
+    background-color: azure;
+}
+.QRcode{
+    width: 400rpx;
+    height: 400rpx;
+    margin: 15rpx;
+}
+.Scanningcode{
+    font-size: 36rpx;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 120rpx;
+}

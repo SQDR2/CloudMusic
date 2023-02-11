@@ -16,12 +16,14 @@ Page({
      */
     onLoad(options) {
         let userInfo = wx.getStorageSync('userInfo')
-        if(!userInfo){
+        let login_cookie = wx.getStorageSync('cookie')
+        // if(!userInfo){
+        if(!login_cookie){
             wx.showToast({
               title: '请先登录',
               icon:'error',
               success:()=>{
-                  wx.reLaunch({
+                  wx.navigateTo ({
                     url: '/pages/login/login',
                   })
               }

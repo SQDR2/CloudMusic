@@ -1,0 +1,6 @@
+<view class="container">
+    <view class="QRcode_box">
+        <image class="QRcode" src="{{QRcode}}" alt="" bindtap="RefreshQRcode"></image>
+    </view>
+    <view class="Scanningcode">请使用网易云音乐app扫码登录</view>
+</view>

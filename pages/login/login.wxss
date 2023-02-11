@@ -61,7 +61,7 @@
     border-radius: 100px;
   }
   
-  .forget-section{
+  .forget-section,.changeLogin-section{
     font-size: 28rpx;
     color: #4399fc;
     text-align: center;

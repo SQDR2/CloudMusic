@@ -13,7 +13,10 @@
         </view>
         <button class="confirm-btn" bindtap="login">登录</button>
         <view class="forget-section">
-            忘记密码?
+            <text>忘记密码</text>
+        </view>
+        <view class="changeLogin-section">
+            <text bindtap="Scanning">扫码登陆</text>
         </view>
     </view>
     <view class="register-section">

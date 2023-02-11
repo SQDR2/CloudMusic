@@ -3,7 +3,6 @@ import dayjs from '../../dayjs/index'
 // let dayjs = request('dayjs')
 const appInstance = getApp();
 Page({
-
     /**
      * 页面的初始数据
      */
